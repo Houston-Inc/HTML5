@@ -1,0 +1,173 @@
+.apos(@x,@y) {position: absolute; left: @x; top: @y;}
+.rpos(@x,@y) {position: relative; left: @x; top: @y;}
+.dimlt(@x,@y,@w,@h) {left: @x; top: @y; width: @w; height: @h;}
+.dimlb(@x,@y,@w,@h) {left: @x; bottom: @y; width: @w; height: @h;}
+.dimrt(@x,@y,@w,@h) {right: @x; top: @y; width: @w; height: @h;}
+.dimrb(@x,@y,@w,@h) {right: @x; bottom: @y; width: @w; height: @h;}
+.adimlt(@x,@y,@w,@h) {position: absolute; .dimlt(@x,@y,@w,@h); display: block}
+.adimlb(@x,@y,@w,@h) {position: absolute; .dimlb(@x,@y,@w,@h); display: block}
+.adimrt(@x,@y,@w,@h) {position: absolute; .dimrt(@x,@y,@w,@h); display: block}
+.adimrb(@x,@y,@w,@h) {position: absolute; .dimrb(@x,@y,@w,@h); display: block}
+.rdimlt(@x,@y,@w,@h) {position: relative; .dimlt(@x,@y,@w,@h); display: block}
+.rdimlb(@x,@y,@w,@h) {position: relative; .dimlb(@x,@y,@w,@h); display: block}
+.rdimrt(@x,@y,@w,@h) {position: relative; .dimrt(@x,@y,@w,@h); display: block}
+.rdimrb(@x,@y,@w,@h) {position: relative; .dimrb(@x,@y,@w,@h); display: block}
+.fdimlt(@x,@y,@w,@h) {position: fixed; .dimlt(@x,@y,@w,@h); display: block}
+.fdimlb(@x,@y,@w,@h) {position: fixed; .dimlb(@x,@y,@w,@h); display: block}
+.fdimrt(@x,@y,@w,@h) {position: fixed; .dimrt(@x,@y,@w,@h); display: block}
+.fdimrb(@x,@y,@w,@h) {position: fixed; .dimrb(@x,@y,@w,@h); display: block}
+
+.box() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: flexbox;
+}
+
+.box-orient(@param) {
+    -ms-box-orient: @param;
+    -o-box-orient: @param;
+    -webkit-box-orient: @param;
+    -moz-box-orient: @param;
+    box-orient: @param;
+}
+
+.box-flex(@param) {
+    -ms-box-flex: @param;
+    -o-box-flex: @param;
+    -webkit-box-flex: @param;
+    -moz-box-flex: @param;
+    box-flex: @param;
+}
+
+.bgblock(@url,@w,@h) {
+    background-image: @url;
+    background-repeat: no-repeat;
+    width: @w;
+    height: 0;
+    padding-top: @h;
+    overflow: hidden;
+}
+
+.column-gap(@gap) {
+    -moz-column-gap: @gap;
+    -webkit-column-gap: @gap;
+    -o-column-gap: @gap;
+    column-gap: @gap;
+}
+.columns(@count, @gap) {
+    -moz-column-count: @count;
+    -webkit-column-count: @count;
+    -o-column-count: @count;
+    column-count: @count;
+    .column-gap(@gap);
+}
+
+.column-width(@width) {
+    -moz-column-width: @width;
+    -webkit-column-width: @width;
+    -o-column-width: @width;
+    -ms-column-width: @width;
+    column-width: @width;
+}
+
+
+.gradient(@color1start, @color1end, @stop: 100%) {
+    background: @color1end; /* old browsers */
+    background: -moz-linear-gradient(top, @color1start 0%, @color1end @stop); /* firefox */
+    background: -o-linear-gradient(top, @color1start 0%, @color1end @stop); /* opera */
+    background: -ms-linear-gradient(top, @color1start 0%, @color1end @stop); /* opera */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color1start), color-stop(@stop,@color1end)); /* webkit */
+}
+
+.gradient3(@color1, @stop1, @color2, @stop2, @color3, @stop3) {
+    background: @color1; /* old browsers */
+    background: -moz-linear-gradient(top, @color1 @stop1, @color2 @stop2, @color3 @stop3); /* firefox */
+    background: -o-linear-gradient(top, @color1 @stop1, @color2 @stop2, @color3 @stop3); /* opera */
+    background: -ms-linear-gradient(top, @color1 @stop1, @color2 @stop2, @color3 @stop3); /* opera */
+    background: -webkit-linear-gradient(top,  @color1 @stop1, @color2 @stop2, @color3 @stop3); /* webkit */
+    background: linear-gradient(top, @color1 @stop1, @color2 @stop2, @color3 @stop3); /* w3c */
+}
+
+.gradient-radial(@start, @colorstart, @colorend, @end) {
+    background: @colorend;
+    background: -webkit-radial-gradient(@start, ellipse farthest-corner, @colorstart, @colorend @end);
+    background: -moz-radial-gradient(@start, ellipse farthest-corner, @colorstart, @colorend @end);
+    background: -o-radial-gradient(@start, ellipse farthest-corner, @colorstart, @colorend @end);
+    background: -ms-radial-gradient(@start, ellipse farthest-corner, @colorstart, @colorend @end);
+    background: radial-gradient(@start, ellipse farthest-corner, @colorstart, @colorend @end);
+}
+
+.transition(@var, @time: '') {
+    -webkit-transform: translateZ(0);
+    -webkit-transition: @var @time;
+    -moz-transition: @var @time;
+    -o-transition: @var @time;
+    -ms-transition: @var @time;
+    transition: @var @time;
+}
+
+.transform(@method) {
+    -webkit-transform: @method;
+    -moz-transform: @method;
+    -o-transform: @method;
+    -ms-transform: @method;
+    transform: @method;
+}
+
+.transform-style(@method) {
+    -webkit-transform-style: @method;
+    -moz-transform-style: @method;
+    -o-transform-style: @method;
+    -ms-transform-style: @method;
+    transform-style: @method;
+}
+
+.backface-visibility(@method) {
+    -webkit-backface-visibility: @method;
+    -moz-backface-visibility: @method;
+    -o-backface-visibility: @method;
+    -ms-backface-visibility: @method;
+    backface-visibility: @method;
+}
+
+.transform-origin(@x,@y) {
+    -webkit-transform-origin: @x @y;
+    -moz-transform-origin: @x @y;
+    -o-transform-origin: @x @y;
+    -ms-transform-origin: @x @y;
+    transform-origin: @x @y;
+}
+
+.border(@w,@top,@right,@bottom,@left) {
+    border-top: @w solid @top;
+    border-right: @w solid @right;
+    border-bottom: @w solid @bottom;
+    border-left: @w solid @left;
+}
+
+.border-radius(@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -khtml-border-radius: @radius;
+  -o-border-radius: @radius;
+  -ms-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.box-shadow(@val) {
+  -webkit-box-shadow: @val;
+  -moz-box-shadow: @val;
+  -khtml-box-shadow: @val;
+  -o-box-shadow: @val;
+  -ms-box-shadow: @val;
+  box-shadow: @val;
+}
+
+.box-sizing(@val) {
+    box-sizing: @val;
+    -moz-box-sizing: @val;
+    -webkit-box-sizing: @val;
+    -ms-box-sizing: @val;
+    -o-box-sizing: @val;
+}
