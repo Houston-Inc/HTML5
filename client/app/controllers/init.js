@@ -4,6 +4,6 @@ App.Controllers.DIController.extend('App.Controllers.Init', /* @Static */{
         console.log("Initializing application...");
     },
     'connected subscribe': function(data) {
-        this.element.addClass("loaded").html('views/page/skeleton.ejs', {});
+        this.element.addClass("loaded").html('//app/views/page/skeleton.ejs', {});
     }
 });

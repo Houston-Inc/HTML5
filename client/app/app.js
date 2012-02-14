@@ -21,6 +21,7 @@ steal(
 .then(
     './views/page/skeleton.ejs',
     './views/page/viewport.ejs',
+    './views/chat/message.ejs',
     './views/demo/geo_location.ejs',
     './views/demo/file.ejs',
     './views/demo/file_info.ejs'
