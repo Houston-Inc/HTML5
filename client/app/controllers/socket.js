@@ -6,12 +6,7 @@ App.Controllers.DIController.extend('App.Controllers.Socket',/* @Static */{
         var self = this;
         this.socket = io.connect('http://'+document.location.host+':'+CONFIG.socket.port);
         this.socket.on('event', function (data) {
-            if (self[data.event]) {
-                self[data.event](data);
-            }
-            else {
-                self.publish(data.event, data.data);
-            }
+            self.publish(data.event, data.data);
         });
     },
     getSocket: function() {
