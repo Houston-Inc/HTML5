@@ -1,4 +1,5 @@
-$.Controller.extend('App.Controllers.Socket',/* @Static */{
+App.Controllers.DIController.extend('App.Controllers.Socket',/* @Static */{
+    pluginName: "socket"
 },/* @Prototype */{
     init: function(element, options) {
         var self = this;

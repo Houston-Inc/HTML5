@@ -1,4 +1,4 @@
-$.Controller.extend('App.Controllers.Block', /* @Static */{
+App.Controllers.DIController.extend('App.Controllers.Block', /* @Static */{
 }, /* @Prototype */{
     timeout: undefined,
     init: function(el,op) {

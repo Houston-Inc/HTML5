@@ -1,6 +1,6 @@
-<nav <%=plugin('app_navigation', this)%>></nav>
+<nav <%=plugin('app_navigation', this)%>><%==include('navi/navi.ejs',this)%></nav>
 <div id="app">
     <header></header>
-    <div id="main" role="main" <%=plugin('app_view_port', this)%>></div>
+    <div id="main" role="main" <%=plugin('app_view_port', this)%>><%==include('page/viewport.ejs',this)%></div>
     <footer></footer>
 </div>

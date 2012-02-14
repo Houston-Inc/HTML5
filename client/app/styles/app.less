@@ -56,8 +56,17 @@ a {
     }
 }
 
+body {
+    &.loggedIn {
+        .logout_state {display: none;}
+    }
+    &.loggedOut {
+        .login_state {display: none;}
+    }
+}
 
 nav {
+
 }
 
 form {
