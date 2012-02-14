@@ -1,4 +1,5 @@
 App.Controllers.DIController.extend('App.Controllers.ChatInput', /* @Static */{
+    pluginName: 'chatInput'
 }, /* @Prototype */{
     communication: inject,
     init: function(element, options) {

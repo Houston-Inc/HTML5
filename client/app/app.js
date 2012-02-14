@@ -40,7 +40,8 @@ steal(
     './controllers/socket.js',
     './controllers/init.js',
     './controllers/chat.js',
-    './controllers/chat_input.js'
+    './controllers/chat_input.js',
+    './controllers/send_button.js'
 )
 /** == boot strap == **/
 .then(function() {
