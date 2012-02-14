@@ -20,12 +20,7 @@ steal(
 /** == templates == **/
 .then(
     './views/page/skeleton.ejs',
-    './views/page/viewport.ejs',
-    './views/navi/navi.ejs',
-    './views/navi/login.ejs',
-    './views/navi/register.ejs',
-    './views/navi/forgot_password.ejs',
-    './views/popup/block.ejs'
+    './views/page/viewport.ejs'
 )
 /** == resources == **/
 .then(
@@ -35,27 +30,16 @@ steal(
 )
 /** == models == **/
 .then(
-    './models/credentials.js',
-    './models/registration.js',
-    './models/forgot_password.js'
 )
 /** == super controllers == **/
 .then(
-    './controllers/popup/popup.js',
     './controllers/DIController.js'
 )
 /** == controllers == **/
 .then(
-    './controllers/authentication.js',
     './controllers/socket.js',
     './controllers/init.js',
-    './controllers/navigation.js',
-    './controllers/popup/block.js',
-    './controllers/popup/login.js',
-    './controllers/popup/register.js',
-    './controllers/popup/forgot_password.js',
-    './controllers/viewport.js',
-    './controllers/page.js'
+    './controllers/viewport.js'
 )
 /** == boot strap == **/
 .then(function() {
@@ -74,7 +58,7 @@ steal(
                 }
             }
         });
-        $(document).socket().authentication();
+        $(document).socket();
         $("body").app_init();
     });
 });

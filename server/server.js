@@ -1,14 +1,11 @@
 var connect = require('connect'),
     quip = require('quip'),
     filter = require('filter'),
-    mongo = require('mongoskin'),
     socketio = require('socket.io'),
-    securityREST = require('restapi/security.js');
-    usersREST = require('restapi/users.js');
+    REST = require('restapi/rest.js');
 
 var dependency = {
-    connect: connect,
-    db: mongo.db('localhost/app')
+    connect: connect
 };
 
 var ALLOWED = {
@@ -20,12 +17,7 @@ var ALLOWED = {
         /^\/app\/.*/,
         /^\/steal\/.*/,
         /^\/jquery\/.*/,
-        /^\/login/,
-        /^\/currentUser/,
-        /^\/logout/,
-        /^\/register/,
-        /^\/activate/,
-        /^\/forgotPassword/
+        /^\/rest\/.*/
     ]
 };
 
@@ -34,12 +26,11 @@ var WEBROOT = __dirname + '/../client';
 connect(
     connect.logger(),
     connect.cookieParser(),
-    connect.session({ secret: 'super626' }),
+    connect.session({secret: 'super626'}),
     quip(),
     filter(ALLOWED),
     connect.bodyParser(),
-    connect.router(securityREST.create(dependency)),
-    connect.router(usersREST.create(dependency)),
+    connect.router(REST.create(dependency)),
     connect.static(WEBROOT)
 ).listen(80);
 console.log("Started static HTTP server at " + WEBROOT);
