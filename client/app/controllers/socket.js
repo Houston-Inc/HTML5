@@ -1,19 +1,23 @@
 App.Controllers.DIController.extend('App.Controllers.Socket',/* @Static */{
-    pluginName: "socket"
+    pluginName: "communication"
 },/* @Prototype */{
+    socket: undefined,
     init: function(element, options) {
         var self = this;
-        var socket = io.connect('http://'+document.location.host+':'+CONFIG.socket.port);
-        socket.on('event', function (data) {
+        this.socket = io.connect('http://'+document.location.host+':'+CONFIG.socket.port);
+        this.socket.on('event', function (data) {
             if (self[data.event]) {
                 self[data.event](data);
             }
             else {
-                OpenAjax.hub.publish(data.event, data);
+                self.publish(data.event, data.data);
             }
         });
     },
+    getSocket: function() {
+        return this.socket;
+    },
     'connected subscribe': function(data) {
-        console.log("Socket connected");
+        console.log("Socket connected", data);
     }
 });

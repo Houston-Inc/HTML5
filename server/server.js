@@ -48,7 +48,10 @@ io.configure('development', function() {
     io.set('log level', 1);
 });
 io.sockets.on('connection', function (socket) {
-    socket.emit('event', {event: 'connected' });
+    socket.emit('event', {event: 'connected'});
+    socket.on('clientMessage', function (data) {
+        io.sockets.emit('event', {event: 'serverMessage', data: data});
+    });
 });
 
 console.log("Server startup was successful.");

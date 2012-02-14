@@ -33,13 +33,14 @@ steal(
 )
 /** == super controllers == **/
 .then(
-    './controllers/DIController.js'
+    './controllers/di_Controller.js'
 )
 /** == controllers == **/
 .then(
     './controllers/socket.js',
     './controllers/init.js',
-    './controllers/viewport.js'
+    './controllers/chat.js',
+    './controllers/chat_input.js'
 )
 /** == boot strap == **/
 .then(function() {
@@ -58,7 +59,7 @@ steal(
                 }
             }
         });
-        $(document).socket();
+        $(document).communication();
         $("body").app_init();
     });
 });

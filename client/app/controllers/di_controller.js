@@ -1,7 +1,7 @@
 var inject = "inject";
 $.Controller.extend('App.Controllers.DIController', /* @Static */{
     instances: {},
-    register: function(ctrl) {
+    register: function(ctrl) { // this is untested yet, hopefully doesn't cause memory leaks
         if (this.pluginName != undefined) {
             this.instances[this.pluginName] = ctrl;
         }
