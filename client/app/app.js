@@ -20,7 +20,9 @@ steal(
 /** == templates == **/
 .then(
     './views/page/skeleton.ejs',
-    './views/page/viewport.ejs'
+    './views/page/viewport.ejs',
+    './views/demo/file.ejs',
+    './views/demo/file_info.ejs'
 )
 /** == resources == **/
 .then(
@@ -39,6 +41,8 @@ steal(
 .then(
     './controllers/socket.js',
     './controllers/init.js',
+    './controllers/file.js',
+    './controllers/file_list.js',
     './controllers/chat.js',
     './controllers/chat_input.js',
     './controllers/send_button.js'

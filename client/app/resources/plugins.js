@@ -71,6 +71,28 @@ $.fn.move = function(x, y) {
     };
     specialEvent("transitionEnd","webkitTransitionEnd mozTransitionEnd oTransitionEnd msTransitionEnd transitionend");
     specialEvent("enter", "keypress", function(ev) {return ev.which == KEY.RETURN});
+  /*  $.event.special.drop = {
+        noop: function (evt) {
+            evt.stopPropagation();
+            evt.preventDefault();
+        },
+        setup: function( data, namespaces ) {
+            var noop =  function (evt) {
+                evt.stopPropagation();
+                evt.preventDefault();
+            };
+            this.addEventListener('dragover', noop, false);
+            this.addEventListener('dragenter', noop, false);
+            this.addEventListener('dragexit', noop, false);
+        },
+        handler: function(evt) {
+            evt.type = "drop";
+            $.event.handle.apply( this, arguments );
+        },
+        teardown: function( namespaces ) {
+            $(this).unbind("drop", $.event.special.objectdrop.handler );
+        }
+    };*/
 })();
 
 /*
