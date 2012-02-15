@@ -2,11 +2,13 @@ App.Controllers.DIController.extend('App.Controllers.GeoLocation', /* @Static */
 }, /* @Prototype */{
     init: function(el, opt) {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.callback('success'), function (msg) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+
+            }, function (msg) {
                console.log(msg);
             });
         } else {
-            error('not supported');
+            alert('not supported');
         }
     },
     success: function(position) {

@@ -6,10 +6,15 @@ App.Controllers.DIController.extend('App.Controllers.FileList', /* @Static */{
         var self = this;
         this.element.append('views/demo/file_info.ejs', file);
         var fr = new FileReader();
-        fr.addEventListener('loadend', function(e) {
+        var sendFile = function(e) {
             var data = e.target.result;
             self.communication.getSocket().emit('dataTransfer', {bin: data});
-        }, false);
+        };
+        if (fr.addEventListener) {
+            fr.addEventListener('loadend', sendFile, false)
+        } else {
+            fr.onload = sendFile;
+        }
         fr.readAsDataURL(file);
     },
     'dataTransfer subscribe': function(call, data) {

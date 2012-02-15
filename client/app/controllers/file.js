@@ -2,6 +2,7 @@ App.Controllers.DIController.extend('App.Controllers.File', /* @Static */{
 }, /* @Prototype */{
     init: function(el, opt) {
         var self = this;
+        if (!el.addEventListener) return;
         el.addEventListener('dragover', this.noop, false);
         el.addEventListener('dragenter', this.noop, false);
         el.addEventListener('dragexit', this.noop, false);
