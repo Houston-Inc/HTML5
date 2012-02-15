@@ -36,7 +36,7 @@ connect(
 console.log("Started static HTTP server at " + WEBROOT);
 
 // socket server
-var SOCKET_PORT = 8081;
+var SOCKET_PORT = 8082;
 var io = socketio.listen(SOCKET_PORT);
 console.log("WebSocket server listens on port "+SOCKET_PORT);
 io.configure('production', function() {

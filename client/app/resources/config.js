@@ -1,6 +1,6 @@
 var CONFIG = {
     socket: {
-        port: 8081
+        port: 8082
     },
     rest: {
         url: 'http://localhost'
