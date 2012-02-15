@@ -24,7 +24,8 @@ steal(
     './views/chat/message.ejs',
     './views/demo/geo_location.ejs',
     './views/demo/file.ejs',
-    './views/demo/file_info.ejs'
+    './views/demo/file_info.ejs',
+    './views/demo/image_file.ejs'
 )
 /** == resources == **/
 .then(

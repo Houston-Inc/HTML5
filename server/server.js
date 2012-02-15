@@ -52,6 +52,9 @@ io.sockets.on('connection', function (socket) {
     socket.on('clientMessage', function (data) {
         io.sockets.emit('event', {event: 'serverMessage', data: data});
     });
+    socket.on('dataTransfer', function (data) {
+        io.sockets.emit('event', {event: 'dataTransfer', data: data});
+    });
 });
 
 console.log("Server startup was successful.");
